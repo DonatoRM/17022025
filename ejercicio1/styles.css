@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#accessibility-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 2px solid #333;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(100%);
+}
+
+#accessibility-panel.active {
+  transform: translateY(0);
+}
+
+.high-contrast {
+  background: black;
+  color: yellow;
+}
+
+.high-contrast #accessibility-panel {
+  background: black;
+  border-top: 2px solid yellow;
+}
+
+.hidden {
+  display: none;
+}
+button:focus {
+  outline: 5px solid rgb(255 0 0 / 0.5);
+}
+
+body.high-contrast button:focus {
+  outline: 5px solid rgb(0 255 0 / 0.5);
+}
